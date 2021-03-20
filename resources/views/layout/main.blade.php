@@ -8,6 +8,6 @@
 </head>
 <body>
     @include('garden.menu')
-    @yield('content') //i sita vieta eis viskas kas main
+    @yield('content')
 </body>
 </html>

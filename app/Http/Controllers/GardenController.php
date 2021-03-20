@@ -18,7 +18,7 @@ class GardenController extends Controller
     {
         if(is_numeric($a) && is_numeric($b)) {
             $a = $a + $b;
-            return view('operations.sum' ,compact('a', 'b'));
+            return view('operations.sum' ,compact('a'));
         } else {
             return 'Iveskite skaicius';
         }
@@ -28,7 +28,7 @@ class GardenController extends Controller
     {
         if(is_numeric($a) && is_numeric($b)) {
             $a = $a * $b;
-            return view('operations.multiply' ,compact('a', 'b'));
+            return view('operations.multiply' ,compact('a'));
         } else{
             return 'Iveskite skaicius';
         }
@@ -38,7 +38,7 @@ class GardenController extends Controller
     {
         if(is_numeric($a) && is_numeric($b)) {
             $a = $a / $b;
-            return view('operations.divide' ,compact('a', 'b'));
+            return view('operations.divide' ,compact('a'));
         } else {
             return 'Iveskite skaicius';
         }
@@ -48,7 +48,7 @@ class GardenController extends Controller
     {
         if(is_numeric($a) && is_numeric($b)) {
             $a = $a - $b;
-            return view('operations.substract' ,compact('a', 'b'));
+            return view('operations.substract' ,compact('a'));
         } else {
             return 'Iveskite skaicius';
         }

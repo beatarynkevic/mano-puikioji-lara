@@ -8,4 +8,4 @@
 @endforeach
 @endsection
 
-@section('content') Mano sodo vartai @endsection
+@section('title') UNICORN @endsection
