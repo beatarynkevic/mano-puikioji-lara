@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GardenController;
+use App\Http\Controllers\PostCalculatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,8 @@ Route::get('calculator/sum/{a}/{b}', [GardenController::class, 'sum']);
 Route::get('calculator/multiply/{a}/{b}', [GardenController::class, 'multiply']);
 Route::get('calculator/divide/{a}/{b}', [GardenController::class, 'divide']);
 Route::get('calculator/substract/{a}/{b}', [GardenController::class, 'substract']);
+
+// http://localhost/laravel/mano-puikioji-lara/public/calculator/divide/9/3
+
+Route::get('calc', [PostCalculatorController::class, 'show'])->name('show-calc');;
+Route::post('calc', [PostCalculatorController::class, 'calc'])->name('do-math');

@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    @include('garden.menu')
+    {{-- @include('garden.menu') --}}
     @yield('content')
 </body>
 </html>
