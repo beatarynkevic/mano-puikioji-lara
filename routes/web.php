@@ -53,7 +53,7 @@ Route::group(['prefix' => 'box'], function() {
     Route::get('edit/{box}', [BoxController::class, 'edit'])->name('box.edit'); //rodo uzpildyta forma
 
     Route::get('add/{box}', [BoxController::class, 'add'])->name('box.add'); //rodo pridejimo lauka
-    Route::get('add-to-box/{box}', [BoxController::class, 'addToBox'])->name('add_to_box.edit'); //prideda ir issaugo
+    Route::post('add-to-box/{box}', [BoxController::class, 'addToBox'])->name('box.add_to_box'); //prideda ir issaugo
 
     Route::post('update/{box}', [BoxController::class, 'update'])->name('box.update'); //uzsaugo konkretu redaguota boxa
     Route::post('delete/{box}', [BoxController::class, 'destroy'])->name('box.destroy');
