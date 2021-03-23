@@ -9,6 +9,7 @@
     Y: <input type="text" name="y">
     <button type="submit">DO MATH</button>
     @csrf{{-- apsaugo nuo apgavysciu ir netikros formos submit --}}
+
 </form>
 @endsection
 @section('title') Calculator @endsection

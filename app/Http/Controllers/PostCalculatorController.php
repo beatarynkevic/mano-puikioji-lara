@@ -11,6 +11,7 @@ class PostCalculatorController extends Controller
     {
         $rez = Session::get('sum', 'not found');
         Session::put('sum', null);
+        
         return view('pc.show', ['r' => $rez]);
     }
 

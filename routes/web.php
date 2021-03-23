@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GardenController;
 use App\Http\Controllers\PostCalculatorController;
+use App\Http\Controllers\BoxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,16 @@ Route::get('calculator/substract/{a}/{b}', [GardenController::class, 'substract'
 
 // http://localhost/laravel/mano-puikioji-lara/public/calculator/divide/9/3
 
-Route::get('calc', [PostCalculatorController::class, 'show'])->name('show-calc');;
+Route::get('calc', [PostCalculatorController::class, 'show'])->name('show-calc');
 Route::post('calc', [PostCalculatorController::class, 'calc'])->name('do-math');
+
+
+Route::group(['prefix' => 'box'], function() {
+    Route::get('', [BoxController::class, 'index'])->name('box.index');
+    Route::get('create', [BoxController::class, 'create'])->name('box.create'); //rodo tuscia forma
+    Route::post('store', [BoxController::class, 'store'])->name('box.store'); //uzsaugo nauja boxa
+    Route::get('edit/{box}', [BoxController::class, 'edit'])->name('box.edit');
+    Route::post('update/{box}', [BoxController::class, 'update'])->name('box.update');
+    Route::post('delete/{box}', [BoxController::class, 'destroy'])->name('box.destroy');
+    Route::get('show/{box}', [BoxController::class, 'show'])->name('box.show');
+});
