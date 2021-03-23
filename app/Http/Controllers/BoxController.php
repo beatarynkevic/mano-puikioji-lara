@@ -14,7 +14,9 @@ class BoxController extends Controller
      */
     public function index()
     {
-        $boxes = Box::all();
+        $boxes = Box::all(); //visos dezes
+        $boxes = $boxes->sortBy('bananas'); //https://laravel.com/docs/8.x/collections
+        //objektas - kolekcija
         return view('box.index', ['boxes' => $boxes]);
     }
 
@@ -36,9 +38,10 @@ class BoxController extends Controller
      */
     public function store(Request $request)
     {
-        $box = new Box;
+        $box = new Box; //<--modelis abstraktus kodas/objektas
         $box->bananas = $request->bananas_in_box;
-        $box->save();
+        //DB bananas                formos name
+        $box->save();  //<-- modelis irasomas i db
         return redirect()->back();
     }
 
@@ -61,7 +64,7 @@ class BoxController extends Controller
      */
     public function edit(Box $box)
     {
-        //
+        return view('box.edit', ['box' => $box]);
     }
 
     /**
@@ -73,7 +76,23 @@ class BoxController extends Controller
      */
     public function update(Request $request, Box $box)
     {
-        //
+        $box->bananas = $request->bananas_in_box;
+        //DB bananas                formos name
+        $box->save();  //<-- modelis irasomas i db
+        return redirect()->back();
+    }
+
+    public function add(Box $box)
+    {
+        return view('');
+    }
+
+    public function addToBox(Request $request, Box $box)
+    {
+        $box->bananas = $request->bananas + $request->add;
+        //DB bananas                formos name
+        $box->save();  //<-- modelis irasomas i db
+        return redirect()->back();
     }
 
     /**
